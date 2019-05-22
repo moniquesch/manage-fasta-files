@@ -1,0 +1,5 @@
+cytochrome_oxidase_subunit_1
+cytochrome_oxidase_subunit_3
+
+
+
