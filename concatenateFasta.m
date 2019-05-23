@@ -1,8 +1,9 @@
 function concatenateFasta
-%CONCATENATEFASTA Summary of this function goes here
-%   Detailed explanation goes here
+% concatenateFasta  Concatenates multiples FASTA files in one single FASTA
+% file. The files need tobe in the current folder. The output file name is
+% FASTACONC.fasta.
 
-system('cat *.fasta > FASTACONC.txt');
+system('cat *.fasta > FASTACONC.fasta');
 
 end
 

@@ -1,6 +1,7 @@
 function check = checkStr(header, str)
-%CHECKSTR Summary of this function goes here
-%   Detailed explanation goes here
+%checkStr Checks if the header contains a string. 
+%   check = checkStr(header, str) is a Boolean variable. If the header contains the string,
+%   check=true. If doesn't, check=false.
 check=false;
 if contains(header, str)
     check=true;
