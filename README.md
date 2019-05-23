@@ -6,7 +6,7 @@ MATLAB R2017a or above.
 Divides one single FASTA file with multiple sequences in various FASTA files with only one sequence.
 
 ## concatenateFasta  
-Concatenates multiples FASTA files in one single FASTA file. The files need tobe in the current folder. The output file name is FASTACONC.fasta.
+Concatenates multiples FASTA files in one single FASTA file. The files need to be in the current folder. The output file name is FASTACONC.fasta.
 
 ## getSpp  
 Returns a list of the species found on the fasta file.
