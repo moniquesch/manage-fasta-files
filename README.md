@@ -10,6 +10,9 @@ Concatenates multiples FASTA files in one single FASTA file. The files need to b
 ## getSpp  
 Returns a list of the species found on the fasta file.
 
+## getGenus 
+Returns a list of the genus found on the fasta file. 
+
 ## getGI  
 Returns a list of the GI numbers found on the fasta file.
 
