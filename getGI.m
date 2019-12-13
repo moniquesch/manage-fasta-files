@@ -1,4 +1,4 @@
-function [gi] = getGI(fasta)
+function [gi] = getGI(fastaStruct)
 % getGI  Returns a list of the GI numbers found on the fasta file.
 %   gi = getGI(fasta) is a string array containing the name of the species on the FASTA file.
 
@@ -6,6 +6,6 @@ function [gi] = getGI(fasta)
 %   words, the gi number must to be present and between pipes. For example:
 %   gi|12345|
 
-gi = arrayfun(@(x) string(extractBetween(x.Header, 'gi|', '|')),fasta);
+gi = arrayfun(@(x) string(extractBetween(x.Header, 'gi|', '|')),fastaStruct);
 end
 

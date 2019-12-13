@@ -1,17 +1,21 @@
+%this is an auxiliar function.
 function writeFastaSpp(fasta, gene, sppList)
-% writeFastaSpp  write the FASTA file using the scientific name and the GI number as the file name.
-%   
-%   It is important that the fasta file is in the NCBI format. In other
-%   words, the name of the species needs to be between squares brackets to
-%   be recognized. For example: [Canis lupus]
-
-for i = 1:length(sppList)
-   sppCheck = arrayfun(@(x) checkStr(x.Header, sppList(i,1)),fasta);
-   fastaCropped = fasta(sppCheck);
-   if ~isempty(fastaCropped)
-       filepath= strcat('output/',gene, '/',sppList(i));
-       arrayfun(@(x) fastawrite(char(strcat(filepath ,' - ', getGI(x), '.fasta')), x),fastaCropped);                 
-   end
+n = length(sppList);
+for i = 1:n
+    sppCheck = arrayfun(@(x) checkStr(x.Header, sppList(i,1)),fasta);
+    fastaCropped = fasta(sppCheck);
+    if ~isempty(fastaCropped)
+        warning('off','Bioinfo:fastawrite:AppendToFile'); 
+        if isempty(gene)
+            arrayfun(@(x) fastawrite(char(strcat('output/', sppList(i), '.fasta')), x),fastaCropped);
+            display(strcat(num2str(i),'/', num2str(n), ' - ',gene, ' - ',sppList(i)))
+        else
+            arrayfun(@(x) fastawrite(char(strcat('output/', gene, '/', sppList(i), '.fasta')), x),fastaCropped);
+            display(strcat(num2str(i),'/', num2str(n), ' - ',gene, ' - ',sppList(i)));
+            fasta = fasta(~sppCheck);
+        end
+        fasta = fasta(~sppCheck);
+    end
 end
 end
 

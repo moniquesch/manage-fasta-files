@@ -1,22 +1,11 @@
-function [spp] = getSpp(fasta)
-% getSpp  Returns a list of the species found on the fasta file.
-%   spp = getSpp(fasta) is a string array containing the name of the species on the FASTA file.
+function [spp] = getSpp(fastaStruct)
+% getSpp  Returns a list with the species of each sequence on the FASTA struct.
+%   spp = getSpp(fastaStruct) is a string array with the same size of the FASTA struct.
 %   
-%   It is important that the fasta file is in the NCBI format. In other
+%   It is important that the FASTA struct is in the NCBI format. In other
 %   words, the name of the species needs to be between squares brackets to
 %   be recognized. For example: [Canis lupus]
 
-spp = unique(arrayfun(@(x) extractSp(x),fasta));
+spp = arrayfun(@(x) extractSp(x),fastaStruct);
 
-end
-
-function [sp] = extractSp(fasta)
-sp=extractBetween(fasta.Header, '[', ']');
-if isempty(sp)
-    sp =cellstr('SPECIES UNKNOWN');
-end
-if ~isscalar(sp)
-    sp=sp(end,1);
-end
-sp=string(sp);
 end
