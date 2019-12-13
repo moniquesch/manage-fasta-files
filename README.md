@@ -2,16 +2,22 @@
 Functions to manage NCBI FASTA files on MATLAB.
 
 ## splitFasta  
-Divides one single FASTA file with multiple sequences in various FASTA files with only one sequence.
+Divides one single MULTI FASTA file with multiple sequences in various FASTA files. It is possible to split the FASTA struct based on list of proteins and species. 
 
 ## concatenateFasta  
-Concatenates multiples FASTA files in one single FASTA file. The files need to be in the current folder. The output file name is FASTACONC.fasta.
+Concatenates multiples FASTA files in one single MULTI FASTA file. The files need to be in the current folder. The output file name is FASTACONC.fasta.
 
 ## getSpp  
-Returns a list of the species found on the fasta file.
+Returns a list with the species of each sequence on the FASTA struct.
 
-## getGenus 
-Returns a list of the genus found on the fasta file. 
+## getUniqueSpp
+Returns a list of the unique species found on the FASTA struct.
+
+## getGenera
+Returns a list with the genus of each sequence on the FASTA struct.
+
+## getUniqueGenera
+Returns a list with the genus of each sequence on the FASTA struct.
 
 ## getGI  
 Returns a list of the GI numbers found on the fasta file.
