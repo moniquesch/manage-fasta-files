@@ -12,7 +12,6 @@ for i = 1:n
         else
             arrayfun(@(x) fastawrite(char(strcat('output/', gene, '/', sppList(i), '.fasta')), x),fastaCropped);
             display(strcat(num2str(i),'/', num2str(n), ' - ',gene, ' - ',sppList(i)));
-            fasta = fasta(~sppCheck);
         end
         fasta = fasta(~sppCheck);
     end
