@@ -14,10 +14,10 @@ Returns a list with the species of each sequence on the FASTA struct.
 Returns a list of the unique species found on the FASTA struct.
 
 ## getGenera
-Returns a list with the genus of each sequence on the FASTA struct.
+Returns a list with the genera of each sequence on the FASTA struct.
 
 ## getUniqueGenera
-Returns a list with the genus of each sequence on the FASTA struct.
+Returns a list with the unique genera of each sequence on the FASTA struct.
 
 ## getGI  
 Returns a list of the GI numbers found on the fasta file.
